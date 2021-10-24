@@ -15,7 +15,7 @@ class GaussianBlur(AbstractChainHandler):
         if not data_description == 'GaussianBlur':
             return super().handle(request)
 
-        img = cv2.GaussianBlur(raw_image, (3, 3), cv2.BORDER_DEFAULT)
-        # Image.show(img)
+        result = cv2.GaussianBlur(raw_image, (3, 3), cv2.BORDER_DEFAULT)
+        # Image.show(result)
 
-        return img
+        return result

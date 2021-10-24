@@ -14,7 +14,7 @@ class GrayScale(AbstractChainHandler):
         if not data_description == 'GrayScale':
             return super().handle(request)
 
-        img = cv2.cvtColor(raw_image, cv2.COLOR_BGR2GRAY)
-        # Image.show(img)
+        result = cv2.cvtColor(raw_image, cv2.COLOR_BGR2GRAY)
+        # Image.show(result)
 
-        return img
+        return result
