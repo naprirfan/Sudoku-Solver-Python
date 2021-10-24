@@ -16,7 +16,7 @@ class Thresholding(AbstractChainHandler, ABC):
         if not data_description == 'Thresholding':
             return super().handle(request)
 
-        th, img = cv2.threshold(image, 127, 200, cv2.THRESH_BINARY_INV)
-        Image.show(img)
+        th, img = cv2.threshold(image, 170, 255, cv2.THRESH_BINARY_INV)
+        # Image.show(img)
 
         return img

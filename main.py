@@ -34,9 +34,9 @@ class ClientExecutor:
         return handler.handle(parameter)
 
     def solve_sudoku_puzzle(self):
-        blurredImage = self.execute_handler(self.gaussianBlur, ['GaussianBlur', self.rawImage])
-        grayScale = self.execute_handler(self.grayScale, ['GrayScale', blurredImage])
-        imageWithThreshold = self.execute_handler(self.thresholding, ['Thresholding', grayScale])
+        grayScale = self.execute_handler(self.grayScale, ['GrayScale', self.rawImage])
+        blurredImage = self.execute_handler(self.gaussianBlur, ['GaussianBlur', grayScale])
+        imageWithThreshold = self.execute_handler(self.thresholding, ['Thresholding', blurredImage])
         dilatedImage = self.execute_handler(self.imageDilation, ['ImageDilation', imageWithThreshold])
         contouredImage = self.execute_handler(self.contourFinder, ['ContourFinder', dilatedImage])
         corneredImage = self.execute_handler(self.cornerFinder, ['CornerFinder', contouredImage])
