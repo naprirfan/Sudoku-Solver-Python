@@ -2,11 +2,11 @@ from abc import ABC
 from solver.base.AbstractChainHandler import AbstractChainHandler
 
 
-class ContourFinder(AbstractChainHandler, ABC):
+class ImageCropper(AbstractChainHandler, ABC):
     def handle(self, request):
         data_description = request[0]
-        if not data_description == 'ContourFinder':
+        if not data_description == 'ImageCropper':
             return super().handle(request)
 
-        print('ContourFinder')
-        return 'ContourFinder'
+        print('ImageCropper')
+        return 'ImageCropper'

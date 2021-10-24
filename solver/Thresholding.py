@@ -1,11 +1,12 @@
 from abc import ABC
 from solver.base.AbstractChainHandler import AbstractChainHandler
-from typing import Any
 
 
 class Thresholding(AbstractChainHandler, ABC):
-    def handle(self, request: Any):
-        if not isinstance(request, str):
+    def handle(self, request):
+        data_description = request[0]
+        if not data_description == 'Thresholding':
             return super().handle(request)
 
+        print('now thresholding')
         return 'now thresholding'

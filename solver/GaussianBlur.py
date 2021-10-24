@@ -1,10 +1,11 @@
 from solver.base.AbstractChainHandler import AbstractChainHandler
-from typing import Any
 
 
 class GaussianBlur(AbstractChainHandler):
-    def handle(self, request: Any):
-        if not isinstance(request, str):
+    def handle(self, request):
+        data_description = request[0]
+        if not data_description == 'GaussianBlur':
             return super().handle(request)
 
-        return 'gaussian blur processing'
+        print('gaussian blur processing raw image')
+        return 'gaussian blur processing raw image'
